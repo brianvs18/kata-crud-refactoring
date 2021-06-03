@@ -10,15 +10,6 @@ public class Todo {
     private Long id;
     private String name;
     private boolean completed;
-    private ListTodo listTodo;
-
-    public ListTodo getListTodo() {
-        return listTodo;
-    }
-
-    public void setListTodo(ListTodo listTodo) {
-        this.listTodo = listTodo;
-    }
 
     public Long getId() {
         return id;

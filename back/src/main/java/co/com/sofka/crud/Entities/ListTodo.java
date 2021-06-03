@@ -1,18 +1,21 @@
 package co.com.sofka.crud.Entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "listTodo")
 public class ListTodo {
 
+    /*
+     *Le agrego una List<Todo> donde le envio el objeto a la entidad ListTodo
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
     private String nameList;
-    private Set<Todo> todoSet = new HashSet<>();
+    private List<Todo> listTodo;
 
     public Integer Id() {
         return Id;
@@ -30,11 +33,11 @@ public class ListTodo {
         this.nameList = nameList;
     }
 
-    public Set<Todo> TodoSet() {
-        return todoSet;
+    public List<Todo> listTodo() {
+        return listTodo;
     }
 
-    public void saveTodoSet(Set<Todo> todoSet) {
-        this.todoSet = todoSet;
+    public void savelistTodo(List<Todo> listTodo) {
+        this.listTodo = listTodo;
     }
 }

@@ -2,6 +2,7 @@ package co.com.sofka.crud.Services;
 
 import co.com.sofka.crud.Abstracts.InterfaceTodoServices;
 import co.com.sofka.crud.Abstracts.TodoRepository;
+import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.Entities.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,30 +10,26 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Path("todo")
 public class TodoService implements InterfaceTodoServices {
 
     @Autowired
     private InterfaceTodoServices repository;
 
-    /*
-    public List<Todo> list(){
-        return (List<Todo>) repository.findAll();
+
+    public List<TodoDTO> list(){
+        return (List<TodoDTO>) repository.list();
     }
 
-    public Todo save(Todo todo){
+    public TodoDTO save(TodoDTO todo){
         return repository.save(todo);
     }
 
     public void delete(Long id){
-        repository.delete(get(id));
+        repository.delete((id));
     }
 
-    public Todo get(Long id){
-         return repository.findById(id).orElseThrow();
+    public TodoDTO get(Long id){
+         return repository.get(id);
     }
-    */
-
-
 
 }
