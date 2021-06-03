@@ -13,23 +13,23 @@ import java.util.List;
 public class TodoService implements InterfaceTodoServices {
 
     @Autowired
-    private InterfaceTodoServices repository;
+    private InterfaceTodoServices services;
 
 
     public List<TodoDTO> list(){
-        return (List<TodoDTO>) repository.list();
+        return (List<TodoDTO>) services.list();
     }
 
     public TodoDTO save(TodoDTO todo){
-        return repository.save(todo);
+        return services.save(todo);
     }
 
     public void delete(Long id){
-        repository.delete((id));
+        services.delete(id);
     }
 
     public TodoDTO get(Long id){
-         return repository.get(id);
+         return services.get(id);
     }
 
 }

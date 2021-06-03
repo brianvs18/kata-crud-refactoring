@@ -8,13 +8,14 @@ import java.util.List;
 public class ListTodo {
 
     /*
-     *Le agrego una List<Todo> donde le envio el objeto a la entidad ListTodo
+     *Le agrego una List donde le envio el objeto a la entidad ListTodo
      */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
     private String nameList;
+
     private List<Todo> listTodo;
 
     public Integer Id() {
@@ -33,6 +34,7 @@ public class ListTodo {
         this.nameList = nameList;
     }
 
+    @OneToMany(mappedBy = "listTodo")
     public List<Todo> listTodo() {
         return listTodo;
     }
