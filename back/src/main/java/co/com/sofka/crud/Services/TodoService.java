@@ -11,22 +11,26 @@ import org.springframework.stereotype.Service;
 public class TodoService implements InterfaceTodoServices {
 
     @Autowired
-    private TodoRepository services;
+    private TodoRepository repository;
 
+    @Override
     public Iterable<Todo> list(){
-        return services.findAll();
+        return repository.findAll();
     }
 
-    public Todo save(TodoDTO todo){
-        return services.save(todo);
+    @Override
+    public Todo save(Todo todo){
+        return repository.save(todo);
     }
 
+    @Override
     public void delete(Long id){
-        services.delete(get(id));
+        repository.delete(get(id));
     }
 
+    @Override
     public Todo get(Long id){
-         return services.findById(id).orElseThrow();
+         return repository.findById(id).orElseThrow();
     }
 
 }

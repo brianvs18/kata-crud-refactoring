@@ -23,12 +23,12 @@ public class TodoController {
     }
     
     @PostMapping(value = "api/todo")
-    public Todo save(@RequestBody TodoDTO todo){
+    public Todo save(@RequestBody Todo todo){
         return service.save(todo);
     }
 
     @PutMapping(value = "api/todo")
-    public Todo update(@RequestBody TodoDTO todo){
+    public Todo update(@RequestBody Todo todo){
         if(todo.getId() != null){
             return service.save(todo);
         }
