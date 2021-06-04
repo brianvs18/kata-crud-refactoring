@@ -1,14 +1,20 @@
 package co.com.sofka.crud.Entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "listTodo")
+@Getter
+@Setter
 public class ListTodo {
 
     /*
-     *Le agrego una List donde le envio el objeto a la entidad ListTodo
+         *Le agrego una List donde le envio el objeto a la entidad ListTodo
      */
 
     @Id
@@ -16,30 +22,7 @@ public class ListTodo {
     private Integer Id;
     private String nameList;
 
-    private List<Todo> listTodo;
+    //@OneToMany(mappedBy = "listTodo")
+    private Set<Todo> listTodo;
 
-    public Integer Id() {
-        return Id;
-    }
-
-    public void saveId(Integer id) {
-        Id = id;
-    }
-
-    public String NameList() {
-        return nameList;
-    }
-
-    public void saveNameList(String nameList) {
-        this.nameList = nameList;
-    }
-
-    @OneToMany(mappedBy = "listTodo")
-    public List<Todo> listTodo() {
-        return listTodo;
-    }
-
-    public void savelistTodo(List<Todo> listTodo) {
-        this.listTodo = listTodo;
-    }
 }

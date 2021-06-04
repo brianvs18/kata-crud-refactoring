@@ -16,7 +16,7 @@ public class TodoController {
     private InterfaceTodoServices service;
 
     @GetMapping(value = "api/todos")
-    public List<TodoDTO> list(){
+    public Iterable<TodoDTO> list(){
         return service.list();
     }
     
@@ -27,7 +27,7 @@ public class TodoController {
 
     @PutMapping(value = "api/todo")
     public TodoDTO update(@RequestBody TodoDTO todo){
-        if(todo.Id() != null){
+        if(todo.getId() != null){
             return service.save(todo);
         }
         throw new RuntimeException("No existe el id para actualziar");

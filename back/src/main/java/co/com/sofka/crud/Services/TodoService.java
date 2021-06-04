@@ -15,9 +15,8 @@ public class TodoService implements InterfaceTodoServices {
     @Autowired
     private InterfaceTodoServices services;
 
-
-    public List<TodoDTO> list(){
-        return (List<TodoDTO>) services.list();
+    public Iterable<TodoDTO> list(){
+        return services.list();
     }
 
     public TodoDTO save(TodoDTO todo){
