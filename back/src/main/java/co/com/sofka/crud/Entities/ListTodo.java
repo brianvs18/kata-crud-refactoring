@@ -11,6 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@Table(name = "listTodo")
 public class ListTodo {
 
     /*
@@ -22,7 +23,7 @@ public class ListTodo {
     private Integer Id;
     private String nameList;
 
-    //@OneToMany(mappedBy = "listTodo")
-    private Set<Todo> listTodo;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Todo> TodoList;
 
 }
