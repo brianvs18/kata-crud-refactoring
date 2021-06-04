@@ -8,7 +8,7 @@ import java.util.List;
 public interface InterfaceTodoServices {
 
     Iterable<Todo> list();
-    Todo save(Todo todo);
+    Todo save(TodoDTO todo);
     void delete(Long id);
     Todo get(Long id);
 }

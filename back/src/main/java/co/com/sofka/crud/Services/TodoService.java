@@ -17,7 +17,7 @@ public class TodoService implements InterfaceTodoServices {
         return services.findAll();
     }
 
-    public Todo save(Todo todo){
+    public Todo save(TodoDTO todo){
         return services.save(todo);
     }
 

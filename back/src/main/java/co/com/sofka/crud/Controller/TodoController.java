@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@RestController es para indicar que la clase es un controlador de tipo Rest
 @RestController
+@RequestMapping("todo")
 @CrossOrigin(origins = "http://localhost:3000")
 public class TodoController {
 
@@ -21,12 +23,12 @@ public class TodoController {
     }
     
     @PostMapping(value = "api/todo")
-    public Todo save(@RequestBody Todo todo){
+    public Todo save(@RequestBody TodoDTO todo){
         return service.save(todo);
     }
 
     @PutMapping(value = "api/todo")
-    public Todo update(@RequestBody Todo todo){
+    public Todo update(@RequestBody TodoDTO todo){
         if(todo.getId() != null){
             return service.save(todo);
         }

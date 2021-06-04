@@ -1,12 +1,8 @@
-import React, { useContext, useRef, useState } from 'react';
-import Store from './store';
+import React, { useContext, useRef, useState, createContext } from 'react';
+import Store from '../../Store'
 
 const HOST_API = "http://localhost:8080/api";
-const initialState = {
-  todo: { list: [],
-   item: {} 
-  }
-};
+
 
 const Form = () => {
     const formRef = useRef(null);
@@ -65,16 +61,18 @@ const Form = () => {
     }
   
     return <form ref={formRef}>
-      <input
-        type="text"
-        name="name"
-        placeholder="¿Qué piensas hacer hoy?"
-        defaultValue={item.name}
-        onChange={(event) => {
-          setState({ ...state, name: event.target.value })
-        }}  ></input>
-      {item.id && <button onClick={onEdit}>Actualizar</button>}
-      {!item.id && <button onClick={onAdd}>Crear</button>}
+      <div className="form-container">
+        <input
+          type="text"
+          name="name"
+          placeholder="¿Qué piensas hacer hoy?"
+          defaultValue={item.name}
+          onChange={(event) => {
+            setState({ ...state, name: event.target.value })
+          }}  ></input>
+        {item.id && <button onClick={onEdit}>Actualizar</button>}
+        {!item.id && <button onClick={onAdd}>Crear</button>}
+      </div>
     </form>
 }
 

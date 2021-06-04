@@ -1,12 +1,7 @@
-import React, { useContext,useEffect } from 'react';
-import Store from './store';
+import React, { useContext,useEffect, createContext } from 'react';
+import Store from '../../Store';
 
 const HOST_API = "http://localhost:8080/api";
-const initialState = {
-  todo: { list: [],
-   item: {} 
-  }
-};
 
 const List = () => {
     const { dispatch, state: { todo } } = useContext(Store);
@@ -55,7 +50,7 @@ const List = () => {
     const decorationDone = {
       textDecoration: 'line-through'
     };
-    return <div>
+    return <div className="list-container">
       <table >
         <thead>
           <tr>
