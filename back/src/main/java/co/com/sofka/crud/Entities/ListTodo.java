@@ -24,6 +24,6 @@ public class ListTodo {
     private String nameList;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Todo> TodoList;
+    private List<Todo> TodoList;
 
 }

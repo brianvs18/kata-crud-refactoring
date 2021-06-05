@@ -7,6 +7,8 @@ import co.com.sofka.crud.Entities.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TodoService implements InterfaceTodoServices {
 
@@ -14,7 +16,7 @@ public class TodoService implements InterfaceTodoServices {
     private TodoRepository repository;
 
     @Override
-    public Iterable<Todo> list(){
+    public List<Todo> list(){
         return repository.findAll();
     }
 
