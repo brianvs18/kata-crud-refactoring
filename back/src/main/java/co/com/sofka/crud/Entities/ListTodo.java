@@ -25,7 +25,7 @@ public class ListTodo {
     private Integer Id;
     private String nameList;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Todo> TodoList;
+    @OneToMany(cascade = CascadeType.MERGE, orphanRemoval = true)
+    private List<Todo> todoList;
 
 }
